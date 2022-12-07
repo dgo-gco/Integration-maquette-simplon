@@ -21,6 +21,9 @@ nav {
 
 .b-menu {
     display: none;
+    position: absolute;
+    right: 23px;
+    top: 30px;
 }
 
 .nav-bar {
@@ -49,9 +52,11 @@ header,
     width: 1196px;
     height: 514px;
     margin-top: 39px;
-    display: flex;
-    align-items: center;
     box-shadow: 1px 1px 3px #D9DEE1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .acceuil-text > h1 {
@@ -60,21 +65,22 @@ header,
 }
 
 .logo-acc {
-    width: 300px;
-    height: 102px;
+    width: min(300px, 90%);
+
 }
 
 .acceuil-text {
     display: flex;
     flex-direction: column;
+    align-content: center;
     justify-content: space-around;
     padding-left: 60px;
-    height: 424px;
+    padding-right: 22px;
+    
 }
 
 .photo-acceuil {
-    max-width: 100%;
-    max-height: auto;
+    max-width: min(578px, 90%);
 }
 
 .formations-btn {
@@ -84,6 +90,7 @@ header,
     border: none;
     padding: 14px 32px;
     margin-right: 20px;
+    min-width: 193px;
 }
 
 .formations-btn:hover, 
@@ -99,6 +106,7 @@ header,
     border-radius: 6px;
     border: 1px solid #CF3034;
     padding: 14px 32px;
+    min-width: 193px;
 }
 
 button {
@@ -112,10 +120,11 @@ button {
 }
 
 .notre-impact {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 220px);
+    width: min(1196px, 90%);
+    margin: auto;
     justify-content: center;
-    gap: 10px;
-    margin: 50px;
 }
 
 .notre-impact > div {
@@ -126,6 +135,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
 }
 
 .notre-impact > div:nth-of-type(4){
@@ -164,9 +174,7 @@ button {
     flex-direction: column;
     gap: 22px;
     margin: 90px 59px;
-    padding-top: 20px;
-    
-   
+    padding-top: 20px;   
 }
 
 .temoignages-img {
@@ -181,15 +189,21 @@ button {
     display: flex;
     justify-content: center;
     margin-top: 17px;
+    font-size: 24px;
+}
+
+.slide.one {
+    margin-right: 41px;
+}
+
+.slide.two {
+    margin-left: 41px;
 }
 
 .apprentis {
-    border: 1px solid black;
-    background-size: 1226px 400px;
-    background-position: center;
-    background-image: url(/images/img-apprentis.png);
     width: 1196px;
     height: 375px;
+    position: relative;
     display: flex;
     justify-content: end;
 }
@@ -202,9 +216,15 @@ button {
     display: flex;
     flex-direction: column;
     gap: 28px;
+    position: absolute;
 }
 
 .aprendiz {
+    width: 100%;
+    height: 100%;
+}
+
+.aprendiz-two {
     display: none;
 }
 
@@ -217,7 +237,7 @@ button {
     color: white;
     border-radius: 6px;
     width: 193px;
-    height: 52px;
+    min-height: 52px;
     border: none;
 }
 
@@ -225,23 +245,40 @@ button {
     width: 1196px;
     height: 163px;
     background-color: white;
-    margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: repeat(5, 13%);
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+figure {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 17px;
+}
+
+.arrow-parent {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
 }
 
 #arrow-section {
     display: flex;
-    justify-content: center;
-    position: relative;
+    justify-content: space-between;
+    width: 1196px;
+}
+
+.play-btns {
+    width: 650px;
+    display: flex;
+    justify-content: end;
 }
 
 .arrows-play {
     display: flex;
     padding-bottom: 25px;
-    
+    margin-top: 10px;
 }
 
 .v-r, .v-l {
@@ -268,18 +305,6 @@ button {
 
 .arrow {
     filter: invert();
-}
-
-.arrow.v-one {
-    position: relative;
-    top: 10px;
-    left: 5px;
-}
-
-.arrow.v {
-    position: relative;
-    left: 30px;
-    bottom: 8px;
 }
 
 footer {
@@ -360,26 +385,46 @@ input::placeholder {
 }
 
  @media screen and (max-width: 950px) { /*you have to decide when to move the image to bottom */
-    .container-acceuil {
+    .nav-bar {
+        display: none;
+    }
+
+    .b-menu {
+        display: block;
+    }
+
+     .container-acceuil {
+        height: auto;
         display: flex;
         flex-direction: column;
-        gap: 25px;
-        width: 1196px;
-        height: 900px;
-        padding-top: 25px;
-        padding-bottom: 20px;
+        padding: 20px;
+        margin-top: 0px;
+    }
+
+    .subtitle {
+        margin: 50px;
+        margin-left: 17px;
+        font-size: 38px;
     }
 
     .acceuil-text {
         justify-content: center;
         align-items: center;
         text-align: center;
-        gap: 10px;
-        padding: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
+        gap: 15px;
+    } 
+
+    .photo-acceuil {
+        padding-top: 20px;
     }
 
     .notre-impact {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 215px);
+        grid-template-rows: repeat(2, 267px);
+        justify-content: center;
     }
 
     .temoignages {
@@ -406,48 +451,144 @@ input::placeholder {
     }
 
     .apprentis {
-        max-width: auto;
-        max-height: auto;
-        
-    }
-
-}
-
-@media screen and (max-width: 725px) {
-    .formations-CFA {
-        
-    }
-
-    .apprentis {
         background-color: white;
     }
-}
 
+    .formations-CFA {
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-@media screen and (max-width: 376px){
-    nav {
+    .aprendiz {
         display: none;
     }
 
-    .burguer-menu {
-        display: flex;
+    .arrow-parent {
+        background-color: white;
     }
 
-    .b-menu {
+
+    .play-btns {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+@media screen and (max-width: 501px){
+
+    .container-acceuil {
+        margin-top: 0px;
+    }
+
+    .acceuil-text {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        text-align: start;
+        padding-left: 0px;
+        padding-right: 0px;
+    } 
+    
+    .photo-acceuil {
+        display: none;
+    }
+
+    .notre-impact {
+        display: grid;
+        grid-template-columns: repeat(2, 181px);
+        grid-template-rows: repeat(2, 183px);
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .notre-impact > div {
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+    }
+
+    .buttons {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .formations-btn {
+        padding: 14px 32px;
+        margin-right: 0px;
+    }
+
+    .formations-CFA {
+        width: 100%;
+        height: 100%;
+        padding: 16px;
+    }
+
+    .apprentis {
+        height: 430px;
+        position: relative;
+        display: flex;
+        justify-content: end;
+    }
+    .aprendiz {
+        display: none;
+    }
+    
+    .aprendiz-two {
         display: block;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
     }
 
     .notre-impact {
         flex-wrap: nowrap;
     }
 
-    .apprentis {
-        background-position: center;
-        background-size: 1257px 479px;
-        background-image: url(/images/img-apprentis.png);
-        width: 1196px;
-        height: 375px;
+    .savoir-btn {
+        min-width: 100%;
+    }
+
+    .arrow-parent {
+        width: 100%;
+    }
+
+    #arrow-section {
         display: flex;
-        justify-content: end;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .play-btns {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    figure > img {
+        width: auto;
+        height: 48px;
+    }
+
+    .ft-mn {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+    }
+   
+    .ft-mn > li > a {
+        border-right: none;
     }
 }
