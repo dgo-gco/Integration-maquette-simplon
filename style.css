@@ -9,125 +9,137 @@ body {
     font-family: 'Nunito Sans', sans-serif;
 }
 
+/* STYLING NAVBAR */
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #E5E5E5;
-    padding: 20px;
-    border-bottom: 1px solid white;
-    width: 1196px;
+    width: min(1196px, 90%);
+    margin: auto;
+    border-bottom: 1px solid #FFFFFF;
+    padding: 10px 0px;
 }
 
-.b-menu {
-    display: none;
-    position: absolute;
-    right: 23px;
-    top: 30px;
-}
-
-.nav-bar {
-    display: flex;
+li {
     list-style: none;
-    gap: 35px;
 }
 
 a {
     text-decoration: none;
-    color: black;
 }
 
-header,
-#acceuil,
+.nav-bar {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    gap: 57px;
+}
+
+.nav-bar li > a {
+    color: #000000;
+}
+
+.burger-menu {
+    display: none;
+}
+
+/* CONTAINERS WITH SAME CHARACTERISTICS*/
+
+#acceuil, #impact,
+#section-temoin, 
+#section-apprentis,
+#section-soutien {
+    border: orangered;
+    width: min(1196px, 90%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+#container-acceuil,
 #temoignages,
-#apprentis,
+#apprentis, 
 #soutien {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border: 1px solid purple;
+    background-color: #FFFFFF;
 }
 
-.container-acceuil {
-    background-color: white;
-    width: 1196px;
-    height: 514px;
-    margin-top: 39px;
-    box-shadow: 1px 1px 3px #D9DEE1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.acceuil-text > h1 {
-    color: #CF3034;
+.subtitle {
     font-size: 38px;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
-.logo-acc {
-    width: min(300px, 90%);
+#notre-impact {
+    border: 1px solid purple;
+}
 
+/* STYLINIG THE MAIN SECTION: ACCEUIL */
+
+#acceuil {
+    min-height: 514px;
+}
+
+#container-acceuil {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    min-height: 514px;
+    box-shadow: 1px 1px 3px #D9DEE1;
 }
 
 .acceuil-text {
     display: flex;
     flex-direction: column;
-    align-content: center;
     justify-content: space-around;
-    padding-left: 60px;
-    padding-right: 22px;
-    
+    gap: 15px;
+    padding-left: 50px;
+}
+
+h1 {
+    color: #CF3034;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.formations-btn,
+.question-btn, 
+.savoir-btn {
+    min-width: 193px;
+    min-height: 52px;
+    border-radius: 6px;
+    border: none;
+    font-size: 18px;
+    background-color: #CF3034;
+    color: #FFFFFF;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.question-btn {
+    background-color: #FFFFFF;
+    color: #CF3034;
+    border: 1.5px solid #CF3034;
 }
 
 .photo-acceuil {
     max-width: min(578px, 90%);
 }
 
-.formations-btn {
-    background-color: #CF3034;
-    color: white;
-    border-radius: 6px;
-    border: none;
-    padding: 14px 32px;
-    margin-right: 20px;
-    min-width: 193px;
-}
-
-.formations-btn:hover, 
-.savoir-btn:hover {
-    background-color: white;
-    color: #CF3034;
-    border: 1px solid #CF3034;
-}
-
-.question-btn {
-    background-color: white;
-    color: #CF3034;
-    border-radius: 6px;
-    border: 1px solid #CF3034;
-    padding: 14px 32px;
-    min-width: 193px;
-}
-
-button {
-    font-weight: bold;
-}
-
-.subtitle {
-    margin: 50px;
-    margin-left: 85px;
-    font-size: 38px;
-}
-
-.notre-impact {
-    display: grid;
-    grid-template-columns: repeat(4, 220px);
-    width: min(1196px, 90%);
-    margin: auto;
+#notre-impact {
+    display: flex;
     justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.notre-impact > div {
+#notre-impact > div {
     background-color: white;
     width: 197px;
     height: 254px;
@@ -135,10 +147,9 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
 }
 
-.notre-impact > div:nth-of-type(4){
+#notre-impact > div:nth-of-type(4){
     background-color: #CF3034;
     color: white;
 }
@@ -146,44 +157,54 @@ button {
 .card.h {
     color: #CF3034;
     font-size: 64px;
+    font-weight: 700;
 }
 
-.simploniens > p,
-.fabriques > p,
-.sorties > p,
-.bilan > p {
-    margin: 0px 19px;
+.card.p {
+    font-size: 24px;
+    padding: 0px 19px;
+}
+/* CHANGE ARROW POSITION */
+.card-arrow {
+    align-self: end;
 }
 
-.temoignages {
-    background-color: white;
-    width: 1196px;
-    height: 475px;
+.card-arrow {
+    position: relative;
+    top: 3px;
+    left: 5px;
+} 
+
+/* STYLING THE TEMOIGNAGES PART */
+
+.tem {
+    min-height: 475px;
     box-shadow: 1px 1px 3px #D9DEE1;
     display: flex;
+}
+
+.tem-text {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 0px 60px;
+    font-size: 18px;
 }
 
 .quotes {
     font-size: 96px;
     color: #CF3034;
-    line-height: 0px;
+    position: relative;
+    top: 60px;
 }
 
-.temoignages-text {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    margin: 90px 59px;
-    padding-top: 20px;   
-}
-
-.temoignages-img {
+.tem-img {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     margin-right: 60px;
-}
+} 
 
 .sliding {
     display: flex;
@@ -192,59 +213,47 @@ button {
     font-size: 24px;
 }
 
-.slide.one {
-    margin-right: 41px;
-}
-
-.slide.two {
-    margin-left: 41px;
-}
+/* STYLING THE APPRENTIS SIMPLON PART */
 
 .apprentis {
-    width: 1196px;
-    height: 375px;
+    min-height: 375px;
     position: relative;
     display: flex;
     justify-content: end;
+}
+
+.aprendiz {
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .formations-CFA {
     background-color: white;
     width: 511px;
     height: 323px;
-    padding: 40px;
+    padding: 40px 40px 33px 40px;
     display: flex;
     flex-direction: column;
     gap: 28px;
     position: absolute;
 }
 
-.aprendiz {
-    width: 100%;
-    height: 100%;
-}
-
 .aprendiz-two {
     display: none;
 }
 
-.cfa-b {
+.apprentis-bold {
     font-weight: bold;
 }
 
 .savoir-btn {
-    background-color: #CF3034;
-    color: white;
-    border-radius: 6px;
     width: 193px;
-    min-height: 52px;
-    border: none;
 }
 
+/* STYLING THE SOUTIEN SECTION */
+
 .soutiens {
-    width: 1196px;
-    height: 163px;
-    background-color: white;
+    min-height: 163px;
     display: grid;
     grid-template-columns: repeat(5, 13%);
     justify-content: center;
@@ -296,7 +305,6 @@ figure {
     gap: 6px;
 }
 
-/* CHECK THE POSITION */
 .arrow-right {
     background-color: #CF3034;
     width: 47px;
@@ -311,6 +319,10 @@ footer {
     background-color: #CF3034;
     color: white;
     width: 100vw;
+}
+
+footer > div {
+    border: 1px solid purple;
 }
 
 .simplon-inscription {
@@ -339,11 +351,18 @@ input::placeholder {
     color: white;
 }
 
-.input-btn {
-    border: none;
+.mail-send {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
-    width: 32px;
-    height: 31px;
+    min-width: 32px;
+    height: 31.5px;
+    border: none;
+}
+
+.mail-send:hover {
+    cursor: pointer;
 }
 
 .socials {
@@ -384,69 +403,62 @@ input::placeholder {
     border-right: none;
 }
 
- @media screen and (max-width: 950px) { /*you have to decide when to move the image to bottom */
+
+
+
+
+
+@media screen and (max-width: 1151px) {
+    #container-acceuil {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .acceuil-text {
+        text-align: center;
+        padding: 24px 10px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .photo-acceuil {
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    nav {
+        margin: auto;
+    }
     .nav-bar {
         display: none;
     }
 
-    .b-menu {
-        display: block;
+    .burger-menu {
+        display: flex;
+        justify-content: end;
+        width: 100%;
     }
 
-     .container-acceuil {
-        height: auto;
+    .tem {
         display: flex;
         flex-direction: column;
-        padding: 20px;
-        margin-top: 0px;
     }
 
-    .subtitle {
-        margin: 50px;
-        margin-left: 17px;
-        font-size: 38px;
+    .tem-text {
+        padding: 0px 16px;
+        font-size: 16px;
     }
 
-    .acceuil-text {
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding-left: 0px;
-        padding-right: 0px;
-        gap: 15px;
-    } 
-
-    .photo-acceuil {
-        padding-top: 20px;
-    }
-
-    .notre-impact {
-        display: grid;
-        grid-template-columns: repeat(2, 215px);
-        grid-template-rows: repeat(2, 267px);
-        justify-content: center;
-    }
-
-    .temoignages {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-    }
-
-    .temoignages-text {
-        gap: 22px;
-        margin: 65px 59px 0px 59px;
-        padding-top: 20px;
- 
-    }
-
-    .temoignages-img {
-        padding-bottom: 0px;
+    .tem-img {
         margin-right: 0px;
-        padding: 40px;
+        padding: 28px 0 18px 0;
     }
 
-    .temoignages-img > img {
+    .tem-img > img {
         display: none;
     }
 
@@ -455,140 +467,140 @@ input::placeholder {
     }
 
     .formations-CFA {
-        min-width: 100%;
+        width: 100%;
+        min-height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+        text-align: center;
+    } /* making the content to fit in mobile devices, takes all the width available */
 
     .aprendiz {
         display: none;
+    }
+
+    figure > img {
+        width: auto;
+        height: 68px;
+    }
+
+    .simplon-inscription {
+        gap: 60px;
     }
 
     .arrow-parent {
         background-color: white;
     }
 
-
     .play-btns {
         width: 100%;
         display: flex;
         justify-content: center;
     }
+
 }
 
+@media screen and (max-width: 376px) {
 
+    #acceuil, #impact,
+    #section-temoin, 
+    #section-apprentis,
+    #section-soutien {
+        border: orangered;
+        width: min(1196px, 100%); /* making all containers to cover all the possible width on mobile */
+    }
 
-@media screen and (max-width: 501px){
+    .subtitle {
+        font-size: 30px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
 
-    .container-acceuil {
+    #container-acceuil {
         margin-top: 0px;
+        display: flex;
+        align-items: center;
+        min-height: 514px;
     }
 
     .acceuil-text {
         display: flex;
-        justify-content: center;
-        align-items: start;
-        text-align: start;
-        padding-left: 0px;
-        padding-right: 0px;
-    } 
-    
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 15px;
+        padding: 16px;
+        width: 100%;
+    }
+
+    .logo-acc {
+        width: 300px;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    button {
+        min-width: 100%;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
     .photo-acceuil {
         display: none;
     }
 
-    .notre-impact {
-        display: grid;
-        grid-template-columns: repeat(2, 181px);
-        grid-template-rows: repeat(2, 183px);
-        justify-content: center;
-        gap: 4px;
-    }
-
-    .notre-impact > div {
-        background-color: white;
-        width: 100%;
-        height: 100%;
+    #notre-impact {
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        margin-left: 0px;
+        gap: 10px;
+        flex-wrap: wrap;
     }
 
-    .buttons {
-        padding-top: 20px;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 15px;
-    }
+    #notre-impact > div {
+        width: 167px;
+        height: 183px;
+    } 
 
-    .formations-btn {
-        padding: 14px 32px;
-        margin-right: 0px;
+    .card.h {
+        font-size: 36px;
+    }
+    
+    .card.p {
+        font-size: 18px;
+        padding: 0px 11px;
     }
 
     .formations-CFA {
-        width: 100%;
-        height: 100%;
+        text-align: start;
         padding: 16px;
-    }
+        gap: 20px;
+    } /* making the content to fit in mobile devices */
 
-    .apprentis {
-        height: 430px;
-        position: relative;
-        display: flex;
-        justify-content: end;
-    }
-    .aprendiz {
-        display: none;
-    }
-    
     .aprendiz-two {
         display: block;
         z-index: 1;
         width: 100%;
         height: 100%;
-    }
+    } /* mobile version img appears on the top of the container */
 
-    .notre-impact {
-        flex-wrap: nowrap;
-    }
-
-    .savoir-btn {
-        min-width: 100%;
-    }
-
-    .arrow-parent {
-        width: 100%;
-    }
-
-    #arrow-section {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    }
-    
-    .play-btns {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    
     figure > img {
         width: auto;
         height: 48px;
-    }
+    } /* soutien icons smaller for mobile version */
 
     .ft-mn {
         display: flex;
         flex-direction: column;
         margin-left: 15px;
-    }
+    }   /* making footer navbar appear as a list */
    
     .ft-mn > li > a {
         border-right: none;
-    }
+    } /* Deleting the border right from the footer navbar */
 }
