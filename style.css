@@ -9,14 +9,14 @@ body {
     font-family: 'Nunito Sans', sans-serif;
 }
 
-/* STYLING NAVBAR */
+/* -----------------STYLING NAVBAR----------------- */
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: min(1196px, 90%);
-    margin: auto;
+    width: min(1196px, 90%); /* my nav will always take 90% of 1196px */
+    margin: auto; /* and this will center my element as we only  */
     border-bottom: 1px solid #FFFFFF;
     padding: 10px 0px;
 }
@@ -44,13 +44,12 @@ a {
     display: none;
 }
 
-/* CONTAINERS WITH SAME CHARACTERISTICS*/
+/* -----------------CONTAINERS WITH SAME CHARACTERISTICS-----------------*/
 
 #acceuil, #impact,
 #section-temoin, 
 #section-apprentis,
 #section-soutien {
-    border: orangered;
     width: min(1196px, 90%);
     display: flex;
     flex-direction: column;
@@ -64,6 +63,7 @@ a {
 #soutien {
     border: 1px solid purple;
     background-color: #FFFFFF;
+    box-shadow: 1px 1px 3px #D9DEE1;
 }
 
 .subtitle {
@@ -72,11 +72,16 @@ a {
     margin-bottom: 50px;
 }
 
-#notre-impact {
-    border: 1px solid purple;
+p {
+    font-size: 18px;
+    font-weight: 300;
 }
 
-/* STYLINIG THE MAIN SECTION: ACCEUIL */
+.p-twenty-four {
+    font-size: 24px;
+} 
+
+/* -----------------STYLINIG THE MAIN SECTION: ACCEUIL -----------------*/
 
 #acceuil {
     min-height: 514px;
@@ -87,7 +92,10 @@ a {
     display: flex;
     align-items: center;
     min-height: 514px;
-    box-shadow: 1px 1px 3px #D9DEE1;
+}
+
+.acceuil-text > div {
+    border: 2px solid green;
 }
 
 .acceuil-text {
@@ -139,20 +147,29 @@ h1 {
     flex-wrap: wrap;
 }
 
-#notre-impact > div {
+.first-two, .second-two {
+    display: flex;
+    gap: 10px;
+}
+
+.first-two > div,
+.second-two > div {
     background-color: white;
     width: 197px;
     height: 254px;
+}
+
+.card-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding: 15px 19px;
 }
 
-#notre-impact > div:nth-of-type(4){
+.second-two > div:nth-of-type(2){
     background-color: #CF3034;
     color: white;
-}
+} 
 
 .card.h {
     color: #CF3034;
@@ -160,71 +177,89 @@ h1 {
     font-weight: 700;
 }
 
-.card.p {
+/* .card.p {
     font-size: 24px;
-    padding: 0px 19px;
+}  */
+
+.sorties, .bilan,
+.simploniens, .fabriques {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-/* CHANGE ARROW POSITION */
+
 .card-arrow {
     align-self: end;
 }
 
-.card-arrow {
-    position: relative;
-    top: 3px;
-    left: 5px;
-} 
+.card-arrow.white {
+    filter: invert();
+}
 
-/* STYLING THE TEMOIGNAGES PART */
+.card-text.three {
+    margin-bottom: -8px;
+}
+
+.card-text.four {
+    padding-top: 80px;
+}
+/* -----------------STYLING THE TEMOIGNAGES PART----------------- */
 
 .tem {
-    min-height: 475px;
     box-shadow: 1px 1px 3px #D9DEE1;
     display: flex;
+    align-items: center;
 }
 
 .tem-text {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 22px;
-    padding: 0px 60px;
+    padding: 70px 60px;
     font-size: 18px;
 }
 
 .quotes {
     font-size: 96px;
     color: #CF3034;
-    position: relative;
-    top: 60px;
+    display: block;
+    line-height: 1px; 
 }
 
 .tem-img {
     display: flex;
     flex-direction: column;
     align-content: center;
-    justify-content: center;
-    margin-right: 60px;
+    padding: 70px 60px 28px 60px;
 } 
 
 .sliding {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 17px;
-    font-size: 24px;
+    width: 273px;
 }
 
-/* STYLING THE APPRENTIS SIMPLON PART */
+.tem-numbers {
+    display: flex;
+    gap: 11px;
+    font-size: 24px; 
+}
+
+.slide {
+    min-width: 11px;
+    height: 22px;
+}
+
+/* -----------------STYLING THE APPRENTIS SIMPLON PART---------------------------- */
 
 .apprentis {
     min-height: 375px;
-    position: relative;
+    background-image: url(/images/img-apprentis-a.png);
     display: flex;
     justify-content: end;
-}
-
-.aprendiz {
-    min-width: 100%;
-    min-height: 100%;
 }
 
 .formations-CFA {
@@ -235,7 +270,6 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 28px;
-    position: absolute;
 }
 
 .aprendiz-two {
@@ -247,10 +281,10 @@ h1 {
 }
 
 .savoir-btn {
-    width: 193px;
+    min-width: 193px;
 }
 
-/* STYLING THE SOUTIEN SECTION */
+/* -----------------STYLING THE SOUTIEN SECTION----------------- */
 
 .soutiens {
     min-height: 163px;
@@ -268,41 +302,27 @@ figure {
 
 .arrow-parent {
     display: flex;
-    justify-content: center;
+    justify-content: end;
+    min-width: 100%;
     margin-bottom: 100px;
 }
 
 #arrow-section {
     display: flex;
     justify-content: space-between;
-    width: 1196px;
-}
-
-.play-btns {
-    width: 650px;
-    display: flex;
-    justify-content: end;
+    width: 55%;
 }
 
 .arrows-play {
-    display: flex;
-    padding-bottom: 25px;
     margin-top: 10px;
 }
 
-.v-r, .v-l {
-    margin: 0px 36px;
+.v-l {
+    margin-right: 36px;
 }
 
-.pause {
-    background-color: #CF3034;
-    width: 4px;
-    height: 23px;
-}
-
-.ps-btn {
-    display: flex;
-    gap: 6px;
+.v-r {
+    margin-left: 36px;
 }
 
 .arrow-right {
@@ -315,22 +335,48 @@ figure {
     filter: invert();
 }
 
+/* -----------------FOOTER STYLING ----------------- */
+
 footer {
     background-color: #CF3034;
     color: white;
     width: 100vw;
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .5fr .5fr 1fr;
+
+    grid-template-areas: 
+    "logo input"
+    "socials socials"
+    "footnav footnav";
 }
 
 footer > div {
     border: 1px solid purple;
 }
 
-.simplon-inscription {
+.footer-logo {
     display: flex;
-    justify-content: center;
-    gap: 145px;
+    justify-content: space-around;
+    align-items: center;
     padding-top: 50px;
-    flex-wrap: wrap;
+    grid-area: logo;
+}
+
+.footer-restez-informe {
+    padding: 50px 0 15px 20px;
+    grid-area: input;
+}
+
+.inscription-text > h4 {
+    font-size: 38px;
+}
+
+.inscription-text > p {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 form {
@@ -370,6 +416,7 @@ input::placeholder {
     justify-content: center;
     margin-top: 60px;
     gap: 30px;
+    grid-area: socials;
 }
 
 .socials > div {
@@ -381,6 +428,10 @@ input::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.footer-menu {
+    grid-area: footnav;
 }
 
 .ft-mn {
@@ -446,16 +497,21 @@ input::placeholder {
     .tem {
         display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+
+    .quotes {
+        padding-top: 21px;
     }
 
     .tem-text {
-        padding: 0px 16px;
+        padding: 35px 16px;
         font-size: 16px;
     }
 
     .tem-img {
         margin-right: 0px;
-        padding: 28px 0 18px 0;
+        padding: 0px 0 18px 0;
     }
 
     .tem-img > img {
@@ -467,17 +523,13 @@ input::placeholder {
     }
 
     .formations-CFA {
-        width: 100%;
+        /* width: 100%; */
         min-height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
-    } /* making the content to fit in mobile devices, takes all the width available */
-
-    .aprendiz {
-        display: none;
-    }
+        text-align: start;
+    }  /* making the content to fit in mobile devices, takes all the width available */
 
     figure > img {
         width: auto;
@@ -492,15 +544,72 @@ input::placeholder {
         background-color: white;
     }
 
-    .play-btns {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+    #arrow-section {
+        width: 60%;
     }
 
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 761px) {
+    .apprentis {
+        background-image: none;
+    }
+
+    .formations-CFA {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+        padding: 16px;
+        gap: 20px;
+    } /* making the content to fit in mobile devices */
+
+    .aprendiz-two {
+        display: block;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    } /* mobile version img appears on the top of the container */
+
+    footer {
+        background-color: #CF3034;
+        color: white;
+        width: 100vw;
+    
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: .3fr .3fr .3fr .3fr;
+    
+        grid-template-areas: 
+        "input"
+        "footnav"
+        "socials"
+        "logo";
+    }
+
+    .socials > div {
+        width: 35px;
+        height: 35px;
+    } 
+
+    .ft-mn {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+    }   /* making footer navbar appear as a list */
+   
+    .ft-mn > li > a {
+        border-right: none;
+    } /* Deleting the border right from the footer navbar */
+}
+
+@media screen and (max-width: 500px) {
+    
+    .p-twenty-four {
+        font-size: 18px;
+    } 
 
     #acceuil, #impact,
     #section-temoin, 
@@ -518,8 +627,6 @@ input::placeholder {
 
     #container-acceuil {
         margin-top: 0px;
-        display: flex;
-        align-items: center;
         min-height: 514px;
     }
 
@@ -527,8 +634,10 @@ input::placeholder {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        gap: 15px;
-        padding: 16px;
+        align-items: start;
+        text-align: left;
+        gap: 36px;
+        padding: 31px 16px;
         width: 100%;
     }
 
@@ -543,26 +652,26 @@ input::placeholder {
     }
 
     button {
-        min-width: 100%;
-    }
+        width: 100%; 
+    } /* Let the buttons take all the available space */
+
+    form > button {
+        width: 0%; 
+    } 
 
     .buttons {
         display: flex;
         flex-direction: column;
+        width: 100%; 
+        border: 1px solid aqua;
     }
 
     .photo-acceuil {
         display: none;
     }
 
-    #notre-impact {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    #notre-impact > div {
+    .first-two > div,
+    .second-two > div {
         width: 167px;
         height: 183px;
     } 
@@ -576,31 +685,20 @@ input::placeholder {
         padding: 0px 11px;
     }
 
-    .formations-CFA {
-        text-align: start;
-        padding: 16px;
-        gap: 20px;
-    } /* making the content to fit in mobile devices */
-
-    .aprendiz-two {
-        display: block;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-    } /* mobile version img appears on the top of the container */
-
     figure > img {
         width: auto;
         height: 48px;
     } /* soutien icons smaller for mobile version */
 
-    .ft-mn {
-        display: flex;
-        flex-direction: column;
-        margin-left: 15px;
-    }   /* making footer navbar appear as a list */
-   
-    .ft-mn > li > a {
-        border-right: none;
-    } /* Deleting the border right from the footer navbar */
+    .arrow-parent {
+        margin-bottom: 50px;
+    }
+
+    #arrow-section {
+        width: 70%;
+    }
+}
+
+@media (orientation: landscape) {
+
 }
