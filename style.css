@@ -29,14 +29,18 @@ a {
     text-decoration: none;
 }
 
-.nav-bar {
+a:hover {
+    cursor: pointer;
+}
+
+.nav-links {
     display: flex;
     justify-content: end;
     width: 100%;
     gap: 57px;
 }
 
-.nav-bar li > a {
+.nav-links li > a {
     color: #000000;
 }
 
@@ -50,7 +54,7 @@ a {
 #section-temoin, 
 #section-apprentis,
 #section-soutien {
-    width: min(1196px, 90%);
+    width: min(1196px, 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,7 +65,6 @@ a {
 #temoignages,
 #apprentis, 
 #soutien {
-    border: 1px solid purple;
     background-color: #FFFFFF;
     box-shadow: 1px 1px 3px #D9DEE1;
 }
@@ -81,6 +84,10 @@ p {
     font-size: 24px;
 } 
 
+button:hover {
+    cursor: pointer;
+}
+
 /* -----------------STYLINIG THE MAIN SECTION: ACCEUIL -----------------*/
 
 #acceuil {
@@ -91,11 +98,8 @@ p {
     margin-top: 40px;
     display: flex;
     align-items: center;
+    gap: 20px;
     min-height: 514px;
-}
-
-.acceuil-text > div {
-    border: 2px solid green;
 }
 
 .acceuil-text {
@@ -136,9 +140,23 @@ h1 {
     border: 1.5px solid #CF3034;
 }
 
+.formations-btn:hover,
+ .savoir-btn:hover {
+    background-color: #FFFFFF;
+    color: #CF3034;
+    border: 1.5px solid #CF3034;
+}
+
+.question-btn:hover {
+    background-color: #CF3034;
+    color: #FFFFFF;
+}
+
 .photo-acceuil {
     max-width: min(578px, 90%);
 }
+
+/* --------------STYLING NOTRE IMPACT SECTION---------------- */
 
 #notre-impact {
     display: flex;
@@ -177,10 +195,6 @@ h1 {
     font-weight: 700;
 }
 
-/* .card.p {
-    font-size: 24px;
-}  */
-
 .sorties, .bilan,
 .simploniens, .fabriques {
     display: flex;
@@ -205,8 +219,7 @@ h1 {
 }
 /* -----------------STYLING THE TEMOIGNAGES PART----------------- */
 
-.tem {
-    box-shadow: 1px 1px 3px #D9DEE1;
+#temoignages {
     display: flex;
     align-items: center;
 }
@@ -269,7 +282,7 @@ h1 {
     padding: 40px 40px 33px 40px;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 17px;
 }
 
 .aprendiz-two {
@@ -281,7 +294,7 @@ h1 {
 }
 
 .savoir-btn {
-    min-width: 193px;
+    width: 193px;
 }
 
 /* -----------------STYLING THE SOUTIEN SECTION----------------- */
@@ -314,7 +327,7 @@ figure {
 }
 
 .arrows-play {
-    margin-top: 10px;
+    padding-top: 25px;
 }
 
 .v-l {
@@ -342,10 +355,9 @@ footer {
     color: white;
     width: 100vw;
 
-
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: .5fr .5fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(381px, 1fr));
+    grid-template-rows: .5fr .5fr .5fr;
 
     grid-template-areas: 
     "logo input"
@@ -353,20 +365,16 @@ footer {
     "footnav footnav";
 }
 
-footer > div {
-    border: 1px solid purple;
-}
-
 .footer-logo {
     display: flex;
-    justify-content: space-around;
+    justify-content: end;
     align-items: center;
-    padding-top: 50px;
+    padding: 50px 72.5px 0 15px;
     grid-area: logo;
 }
 
 .footer-restez-informe {
-    padding: 50px 0 15px 20px;
+    padding: 50px 15px 15px 72.5px;
     grid-area: input;
 }
 
@@ -430,6 +438,26 @@ input::placeholder {
     align-items: center;
 }
 
+.socials-hover {
+    display: none;
+}
+
+.socials > div:hover {
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border: 1px solid #CF3034;
+}
+
+
+.socials > div:hover > .socials-hover {
+    display: block;
+}
+
+.socials > div:hover > .socials-icons {
+    display: none;
+}
+
+
 .footer-menu {
     grid-area: footnav;
 }
@@ -454,10 +482,7 @@ input::placeholder {
     border-right: none;
 }
 
-
-
-
-
+/* -------------MEDIA QUERIES----------------- */
 
 @media screen and (max-width: 1151px) {
     #container-acceuil {
@@ -480,12 +505,38 @@ input::placeholder {
     }
 }
 
+.mobile-menu {
+    margin-left: 0;
+}
+
 @media screen and (max-width: 980px) {
     nav {
-        margin: auto;
+        /* margin: auto; */
+        /* margin: 0; */
+        padding-left: 15px;
     }
-    .nav-bar {
-        display: none;
+
+    .nav-links {
+        /* display: none; */
+
+        top: 0;
+        left: 0;
+        position: absolute;
+        flex-direction: column;
+        background-color: #D9DEE1;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        margin-top: 80px;
+
+        transition: 0.5s;
+    }
+
+    .nav-links.mobile-menu {
+        margin-left: 0;
     }
 
     .burger-menu {
@@ -494,7 +545,7 @@ input::placeholder {
         width: 100%;
     }
 
-    .tem {
+    #temoignages {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -523,7 +574,6 @@ input::placeholder {
     }
 
     .formations-CFA {
-        /* width: 100%; */
         min-height: 100%;
         display: flex;
         justify-content: center;
@@ -548,6 +598,9 @@ input::placeholder {
         width: 60%;
     }
 
+    .arrows-play {
+        padding-top: 5px;
+    }
 }
 
 @media screen and (max-width: 761px) {
@@ -587,6 +640,15 @@ input::placeholder {
         "footnav"
         "socials"
         "logo";
+    }
+
+    .footer-logo {
+        justify-content: center;
+        padding-right: 0px;
+    }
+    
+    .footer-restez-informe {
+        padding: 50px 0 15px 15px;
     }
 
     .socials > div {
@@ -685,6 +747,10 @@ input::placeholder {
         padding: 0px 11px;
     }
 
+    .savoir-btn {
+        width: 100%;
+    }
+
     figure > img {
         width: auto;
         height: 48px;
@@ -702,3 +768,4 @@ input::placeholder {
 @media (orientation: landscape) {
 
 }
+

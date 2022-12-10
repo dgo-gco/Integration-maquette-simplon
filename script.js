@@ -1,19 +1,19 @@
-const menu = document.querySelector('.b-menu');
-const navMenu = document.querySelector('.nav-bar')
+const menuBrg = document.querySelector('.burger-menu');
+const navMenu = document.querySelector('.nav-links')
 
-const menuBtn = document.querySelector('.nav-bar');
+// const menuBtn = document.querySelector('.nav-links');
 
-const temoignageDroite = document.querySelector('.');
-const temoignageGauche = document.querySelector('.');
+// const temoignageDroite = document.querySelector('.');
+// const temoignageGauche = document.querySelector('.');
 
-const soutienDroite = document.querySelector('.');
-const soutienGauche = document.querySelector('.');
+// const soutienDroite = document.querySelector('.');
+// const soutienGauche = document.querySelector('.');
 
 
-menu.addEventListener('click', function(){
+menuBrg.addEventListener('click', function(){
     navMenu.classList.toggle('mobile-menu');
 })
 
-menuBtn.addEventListener('click', function(){
-    navMenu.classList.toggle('mobile-menu');
-})
+// menuBtn.addEventListener('click', function(){
+//     navMenu.classList.toggle('mobile-menu');
+// })
