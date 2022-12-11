@@ -9,16 +9,22 @@ body {
     font-family: 'Nunito Sans', sans-serif;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
 /* -----------------STYLING NAVBAR----------------- */
 
 nav {
+    background-color: #E5E5E5;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: min(1196px, 90%); /* my nav will always take 90% of 1196px */
+    width: min(1196px, 100%); /* my nav will always take 90% of 1196px */
     margin: auto; /* and this will center my element as we only  */
     border-bottom: 1px solid #FFFFFF;
-    padding: 10px 0px;
+    padding: 10px 10px;
 }
 
 li {
@@ -27,10 +33,6 @@ li {
 
 a {
     text-decoration: none;
-}
-
-a:hover {
-    cursor: pointer;
 }
 
 .nav-links {
@@ -48,7 +50,7 @@ a:hover {
     display: none;
 }
 
-/* -----------------CONTAINERS WITH SAME CHARACTERISTICS-----------------*/
+/* -----------------ELEMENTS WITH SAME CHARACTERISTICS-----------------*/
 
 #acceuil, #impact,
 #section-temoin, 
@@ -84,7 +86,14 @@ p {
     font-size: 24px;
 } 
 
-button:hover {
+button {
+    transition: all 0.4s ease;
+}
+
+a, button, .burger-menu,
+.slide-right, .slide-left, .tem-numbers > p, 
+.v-l, .v-r, .icon-stop,
+.arrow-right {
     cursor: pointer;
 }
 
@@ -167,6 +176,7 @@ h1 {
 
 .first-two, .second-two {
     display: flex;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -220,8 +230,25 @@ h1 {
 /* -----------------STYLING THE TEMOIGNAGES PART----------------- */
 
 #temoignages {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials {
+    display: flex; 
+    overflow-x: auto;
+    scroll-behavior: smooth;
+} 
+
+.testimonials::-webkit-scrollbar{
+    display: none;
+}
+
+.tem-row,
+.tem-row-imane,
+.tem-row-alcha {
     display: flex;
-    align-items: center;
+    min-width: fit-content;
 }
 
 .tem-text {
@@ -261,7 +288,7 @@ h1 {
     font-size: 24px; 
 }
 
-.slide {
+.slide-right, .slide-left {
     min-width: 11px;
     height: 22px;
 }
@@ -299,6 +326,7 @@ h1 {
 
 /* -----------------STYLING THE SOUTIEN SECTION----------------- */
 
+
 .soutiens {
     min-height: 163px;
     display: grid;
@@ -327,6 +355,7 @@ figure {
 }
 
 .arrows-play {
+    display: flex;
     padding-top: 25px;
 }
 
@@ -486,12 +515,13 @@ input::placeholder {
 
 @media screen and (max-width: 1151px) {
     #container-acceuil {
-        margin-top: 40px;
+        margin-top: 72px;
         display: flex;
         flex-direction: column;
     }
 
     .acceuil-text {
+        align-items: center;
         text-align: center;
         padding: 24px 10px;
     }
@@ -503,22 +533,26 @@ input::placeholder {
     .photo-acceuil {
         padding-bottom: 10px;
     }
+    
 }
 
 .mobile-menu {
-    margin-left: 0;
+    margin-top: 0px;
 }
 
 @media screen and (max-width: 980px) {
+
+    
+
     nav {
         /* margin: auto; */
         /* margin: 0; */
-        padding-left: 15px;
+        
+        position: fixed;
+        z-index: 1;
     }
 
     .nav-links {
-        /* display: none; */
-
         top: 0;
         left: 0;
         position: absolute;
@@ -529,23 +563,24 @@ input::placeholder {
         margin: 0;
         justify-content: center;
         align-items: center;
-        margin-left: -100%;
-        margin-top: 80px;
+        margin-top: -200%;
 
-        transition: 0.5s;
+        transition: 0.7s;
     }
 
     .nav-links.mobile-menu {
-        margin-left: 0;
+        margin-top: 0px;
     }
 
     .burger-menu {
         display: flex;
         justify-content: end;
-        width: 100%;
+        z-index: 1;
     }
 
-    #temoignages {
+    .tem-row,
+    .tem-row-imane,
+    .tem-row-alcha {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -626,13 +661,18 @@ input::placeholder {
         height: 100%;
     } /* mobile version img appears on the top of the container */
 
+    .soutiens {
+        gap: 15px;
+    }
+
     footer {
         background-color: #CF3034;
         color: white;
         width: 100vw;
     
         display: grid;
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; */
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         grid-template-rows: .3fr .3fr .3fr .3fr;
     
         grid-template-areas: 
@@ -644,11 +684,11 @@ input::placeholder {
 
     .footer-logo {
         justify-content: center;
-        padding-right: 0px;
+        padding: 44px 0 0 0px;
     }
     
     .footer-restez-informe {
-        padding: 50px 0 15px 15px;
+        padding: 50px 15px 15px 15px;
     }
 
     .socials > div {
@@ -673,14 +713,6 @@ input::placeholder {
         font-size: 18px;
     } 
 
-    #acceuil, #impact,
-    #section-temoin, 
-    #section-apprentis,
-    #section-soutien {
-        border: orangered;
-        width: min(1196px, 100%); /* making all containers to cover all the possible width on mobile */
-    }
-
     .subtitle {
         font-size: 30px;
         margin-top: 50px;
@@ -688,8 +720,7 @@ input::placeholder {
     }
 
     #container-acceuil {
-        margin-top: 0px;
-        min-height: 514px;
+        margin-top: 68px;
     }
 
     .acceuil-text {
@@ -725,7 +756,6 @@ input::placeholder {
         display: flex;
         flex-direction: column;
         width: 100%; 
-        border: 1px solid aqua;
     }
 
     .photo-acceuil {
@@ -751,6 +781,11 @@ input::placeholder {
         width: 100%;
     }
 
+    .soutiens {
+        min-height: 95px;
+        gap: 15px;
+    }
+
     figure > img {
         width: auto;
         height: 48px;
@@ -764,8 +799,3 @@ input::placeholder {
         width: 70%;
     }
 }
-
-@media (orientation: landscape) {
-
-}
-
