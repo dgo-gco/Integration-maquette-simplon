@@ -337,27 +337,6 @@ h1 {
     align-items: center;
 }
 
-.soutiens::before,
-.soutiens::after {
-    background: linear-gradient(to right, rgba(255,255,2551) 0%, rgba(255,255,255,0) 100%);
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 15%;
-    z-index: 0;
-}
-
-.soutiens::before {
-    top: 0;
-    left: 0;
-}
-
-.soutiens::after {
-    right: -1px;
-    top: 0;
-    transform: rotateZ(180deg);
-}
-
 .sponsors-list {
     display: flex;
     align-items: center;
