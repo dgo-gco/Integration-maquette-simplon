@@ -15,9 +15,6 @@ const temJon = document.querySelector('#tem-btn-left');
 const temIma = document.querySelector('#tem-btn-left-imane');
 const temAlcha = document.querySelector('#tem--btn-left-alcha');
 
-// const soutienDroite = document.querySelector('#temoignages');
-// const soutienGauche = document.querySelector('.');
-
 // ------------------------DISPLAYING THE MOBILE MENU --------
 menuClose.style.display = 'none';
 
@@ -25,6 +22,7 @@ menuOpen.addEventListener('click', function(){
     navMenu.classList.toggle('mobile-menu'); //It adds a new class to the .nav-links ul in HTML thanks to toggle
     menuClose.style.display = 'block';
     menuOpen.style.display = 'none';
+
 })
 
 menuClose.addEventListener('click', function(){
@@ -33,7 +31,7 @@ menuClose.addEventListener('click', function(){
     menuOpen.style.display = 'block';
 })
 
-// ------------------------DISPLAYING TEMOINS --------
+// ------------------------DISPLAYING TEMOINS ---------------------------------
 const theParent = document.querySelector('#temoignages');
 
 theParent.addEventListener('click', passNextTestimon, false);
@@ -61,17 +59,73 @@ function passNextTestimon(e) { //event as a parameter
     }
 }
 
-// temoignagesSlide.forEach((testimonial, i) => {
-//     let containerDimensions = testimonial.getBoundingClientRect();
-//     let containerWidth = containerDimensions.width;
+// ------------------------DISPLAYING SPONSORS ---------------------------------
 
-//     temoignageDroite.addEventListener('click', () => {
-//         testimonial.scrollLeft += containerWidth;
-//     })
+    const slider = document.querySelector(".soutiens");
+    const sliderWidth = slider.offsetWidth;
+    const slideList = document.querySelector(".sponsors-list");
+    var count = 1;
+    const items = slideList.querySelectorAll("#sponsors-simplon").length;
+    const prev = document.querySelector(".v-l");
+    const next = document.querySelector(".v-r");
 
-//     temoignageGauche.addEventListener('click', () => {
-//         testimonial.scrollLeft += containerWidth;
-//     })
-// })
+    const pause = document.querySelector('.icon-stop');
 
+    window.addEventListener('resize', function() { //Making the automatic slider works on all screens
+        sliderWidth = slider.offsetWidth;
+    });
 
+    function nextSlide(){
+    if(count < items) {
+        slideList.style.left = "-" + count * sliderWidth + "px";
+        count++;
+    }
+    else if(count = items) {
+        slideList.style.left = "0px";
+        count = 1;
+    }
+    }
+
+    function prevSlide(){
+    if(count > 1) {
+        count = count - 2;
+        slideList.style.left = "-" + count * sliderWidth + "px";
+        count++;
+    }
+    else if(count = 1){
+        count = items - 1;
+        slideList.style.left = "-" + count * sliderWidth + "px";
+        count++;
+    }
+    }
+
+    next.addEventListener("click", function(){
+    nextSlide();
+    });
+
+    prev.addEventListener("click", function(){
+    prevSlide();
+    });
+
+    let intervalSponsors;
+
+    //Making the slider automatic
+    function displaySponsors() {
+        if (!intervalSponsors) {
+            intervalSponsors = setInterval(function() {
+                nextSlide()
+                }, 3000);
+        }
+    }
+
+    displaySponsors();
+    
+
+    pause.addEventListener('click', function(){
+        clearInterval(intervalSponsors);
+        if (intervalSponsors){
+            intervalSponsors = null;
+        } else if (!intervalSponsors) {
+            displaySponsors();
+        }
+    })
