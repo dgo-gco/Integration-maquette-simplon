@@ -626,6 +626,7 @@ input::placeholder {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
     }
 
     .quotes {
@@ -738,6 +739,11 @@ input::placeholder {
         height: 35px;
     } 
 
+    .socials > div > img {
+        width: auto;
+        height: 18px;
+    }
+
     .ft-mn {
         display: flex;
         flex-direction: column;
@@ -807,7 +813,7 @@ input::placeholder {
     .first-two > div,
     .second-two > div {
         width: 167px;
-        height: 183px;
+        height: auto;
     } 
 
     .card.h {
