@@ -542,6 +542,11 @@ input::placeholder {
 /* -------------MEDIA QUERIES----------------- */
 
 @media screen and (max-width: 1151px) {
+
+    .subtitle {
+        margin-left: 16px;
+    }
+
     #container-acceuil {
         margin-top: 72px;
         display: flex;
