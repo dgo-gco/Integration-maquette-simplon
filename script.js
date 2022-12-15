@@ -46,8 +46,6 @@ function passNextTestimon(e) { //event as a parameter
                 testimonial.scrollLeft -= containerWidth;
             }
         })
-
-        console.log('Hello' + clickedItem);
     }
 }
 
@@ -112,7 +110,6 @@ const pause = document.querySelector('.icon-stop');
 
     displaySponsors();
     
-
     pause.addEventListener('click', function(){
         clearInterval(intervalSponsors);
         if (intervalSponsors){

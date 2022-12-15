@@ -72,7 +72,7 @@ a {
 }
 
 .subtitle {
-    font-size: 38px;
+    font-size: clamp(30px, 5vw, 38px);
     margin-top: 100px;
     margin-bottom: 50px;
 }
@@ -83,7 +83,7 @@ p {
 }
 
 .p-twenty-four {
-    font-size: 24px;
+    font-size: clamp(18px, 5vw, 24px);
 } 
 
 button {
@@ -121,7 +121,7 @@ a, button, .burger-menu,
 
 h1 {
     color: #CF3034;
-    font-size: 38px;
+    font-size: clamp(24px, 5vw, 38px);
     font-weight: 700;
 }
 
@@ -201,7 +201,7 @@ h1 {
 
 .card.h {
     color: #CF3034;
-    font-size: 64px;
+    font-size: clamp(36px, 5vw, 64px);
     font-weight: 700;
 }
 
@@ -259,7 +259,7 @@ h1 {
     align-items: center;
     gap: 22px;
     padding: 70px 60px;
-    font-size: 18px;
+    font-size: clamp(16px, 5vw, 18px);
 }
 
 .quotes {
@@ -436,7 +436,7 @@ footer {
 }
 
 .inscription-text > h4 {
-    font-size: 38px;
+    font-size: clamp(24px, 5vw, 38px);
 }
 
 .inscription-text > p {
@@ -620,7 +620,6 @@ input::placeholder {
 
     .tem-text {
         padding: 35px 16px;
-        font-size: 16px;
     }
 
     .tem-img {
@@ -740,13 +739,8 @@ input::placeholder {
 }
 
 @media screen and (max-width: 500px) {
-    
-    .p-twenty-four {
-        font-size: 18px;
-    } 
 
     .subtitle {
-        font-size: 30px;
         margin-top: 50px;
         margin-bottom: 20px;
     }
@@ -769,11 +763,6 @@ input::placeholder {
     .logo-acc {
         width: 300px;
         height: auto;
-    }
-
-    h1 {
-        font-size: 24px;
-        font-weight: 700;
     }
 
     button {
@@ -799,10 +788,6 @@ input::placeholder {
         width: 167px;
         height: auto;
     } 
-
-    .card.h {
-        font-size: 36px;
-    }
     
     .card.p {
         font-size: 18px;
