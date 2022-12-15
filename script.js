@@ -4,16 +4,9 @@ const navMenu = document.querySelector('.nav-links');
 const menuClose = document.querySelector('.b-menu-ouvert');
 
 const temoignageDroite = document.querySelector('.slide-right');
-const temoignageOne = document.querySelector('.first-temoin');
-const temoignageTwo = document.querySelector('.second-temoin');
-const temoignagethree = document.querySelector('.third-temoin');
 const temoignageGauche = document.querySelector('.slide-left');
 
 const temoignagesSlide = document.querySelectorAll('.testimonials');
-
-const temJon = document.querySelector('#tem-btn-left');
-const temIma = document.querySelector('#tem-btn-left-imane');
-const temAlcha = document.querySelector('#tem--btn-left-alcha');
 
 // ------------------------DISPLAYING THE MOBILE MENU --------
 menuClose.style.display = 'none';
@@ -41,12 +34,12 @@ function passNextTestimon(e) { //event as a parameter
     if (e.target !== e.currentTarget) {//check im not clicking on the parent but other element inside
         var clickedItem = e.target.id;
 
-        temoignagesSlide.forEach((testimonial, i) => {
-        let containerDimensions = testimonial.getBoundingClientRect();
-        let containerWidth = containerDimensions.width;
+        temoignagesSlide.forEach((testimonial) => {
+        let containerDimensions = testimonial.getBoundingClientRect(); //Returns the size of the element and its position relative to the viewport
+        let containerWidth = containerDimensions.width; // The getBoundingClientRect method returns a DOMRect object with eight properties: left, top, right, bottom, x, y, width, height. We want WIDTH
         
             if (clickedItem === 'tem-btn-right' || clickedItem === 'tem-btn-right-imane') {
-                testimonial.scrollLeft += containerWidth;
+                testimonial.scrollLeft += containerWidth; //scrollLeft property sets or returns the number of pixels an element's content is scrolled HORIZONTALLY. In this case I want to scroll it the whole Temoignages width dimension, so I add its dimensions
             } else if (clickedItem === 'tem-btn-left' || 
                        clickedItem === 'tem-btn-left-imane' ||
                        clickedItem === 'tem-btn-left-alch') {
@@ -55,21 +48,20 @@ function passNextTestimon(e) { //event as a parameter
         })
 
         console.log('Hello' + clickedItem);
-
     }
 }
 
 // ------------------------DISPLAYING SPONSORS ---------------------------------
 
-    const slider = document.querySelector(".soutiens");
-    const sliderWidth = slider.offsetWidth;
-    const slideList = document.querySelector(".sponsors-list");
-    var count = 1;
-    const items = slideList.querySelectorAll("#sponsors-simplon").length;
-    const prev = document.querySelector(".v-l");
-    const next = document.querySelector(".v-r");
+const slider = document.querySelector(".soutiens");
+const sliderWidth = slider.offsetWidth; //offsetWidth gives us the viewable width(excludes margin) of an element. In this case i get the width of my container
+const slideList = document.querySelector(".sponsors-list");
+let count = 1;
+const items = slideList.querySelectorAll("#sponsors-simplon").length;
+const prev = document.querySelector(".v-l");
+const next = document.querySelector(".v-r");
 
-    const pause = document.querySelector('.icon-stop');
+const pause = document.querySelector('.icon-stop');
 
     window.addEventListener('resize', function() { //Making the automatic slider works on all screens
         sliderWidth = slider.offsetWidth;

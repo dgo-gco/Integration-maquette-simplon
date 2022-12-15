@@ -566,7 +566,6 @@ input::placeholder {
     .photo-acceuil {
         padding-bottom: 10px;
     }
-    
 }
 
 .mobile-menu {
@@ -700,7 +699,6 @@ input::placeholder {
         width: 100vw;
     
         display: grid;
-        /* grid-template-columns: 1fr; */
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         grid-template-rows: .3fr .3fr .3fr .3fr;
     
